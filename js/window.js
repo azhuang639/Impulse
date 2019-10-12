@@ -3,16 +3,29 @@ var not_bought = 0;
 var num_yes = 0;
 var num_no = 0;
 
-
-window.onload = startup;
+console.log('HERE HERE');
+// window.onload = startup;
 
 function startup(){
-    console.log("STARTUP");
-    document.getElementById("close").style.display = "none";
+    console.log("STARTUP WHAT?");
+    document.getElementById("impulse-close").style.display = "none";
     document.getElementById("q2").style.display = "none";
     document.getElementById("q3").style.display = "none";
     document.getElementById("q4").style.display = "none";
     document.getElementById("buy?").style.display = "none";
+
+    document.getElementById("yes1").addEventListener('click', yes1);
+    document.getElementById("no1").addEventListener('click', no1);
+    document.getElementById("yes2").addEventListener('click', yes2);
+    document.getElementById("no2").addEventListener('click', no2);
+    document.getElementById("yes3").addEventListener('click', yes3);
+    document.getElementById("no3").addEventListener('click', no3);
+    document.getElementById("yes4").addEventListener('click', yes4);
+    document.getElementById("no4").addEventListener('click', no4);
+    document.getElementById("did-buy").addEventListener('click', didBuy);
+    document.getElementById("did-not-buy").addEventListener('click', didNotBuy);
+    document.getElementById("impulse-close").addEventListener('click', closeWindow);
+
 }
 
 function yes1(){
@@ -50,7 +63,7 @@ function yes4(){
     {
         document.getElementById("good?").innerHTML =
             "This shouldn't be an impulse purchase. ";
-        document.getElementById("close").style.display = "block";
+        document.getElementById("impulse-close").style.display = "block";
     }
     else
     {
@@ -66,7 +79,7 @@ function no4(){
     {
         document.getElementById("good?").innerHTML =
             "This shouldn't be an impulse purchase. ";
-        document.getElementById("close").style.display = "block";
+        document.getElementById("impulse-close").style.display = "block";
     }
     else
     {
@@ -95,13 +108,20 @@ function didNotBuy(){
     //document.getElementById("close").innerHTML = "close window";
    // window.close();
 }
-function closewindow(){
-    console.log("test");
-    window.close();
+
+function closeWindow(){
+    document.getElementById('impulse-window').style.display = 'none';
+    document.getElementById('impulse-overlay').style.display = 'none';
+
+    // Tell click event listener that impulse window was already show
+    const impulseChecked = document.createElement('div');
+    impulseChecked.id = 'impulse-checked';
+    impulseChecked.style.display = 'none';
+    document.getElementsByTagName('body')[0].append(impulseChecked);
 }
 
 function close_appear() {
-    var x = document.getElementById("close");
+    var x = document.getElementById("impulse-close");
     if (x.style.display === "none") {
         x.style.display = "block";
     } else {

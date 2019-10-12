@@ -1,3 +1,7 @@
+// const imported = document.createElement('script');
+// imported.src = 'window.js';
+// document.head.appendChild(imported);
+
 trackImpulse();
 
 function trackImpulse() {
@@ -34,8 +38,11 @@ function trackImpulse() {
 
   if (targetButton) {
     targetButton.addEventListener('click', (e) => {
-      e.preventDefault();
-      insertWindow();
+      // If impulse window has not already been shown
+      if (!document.getElementById('impulse-checked')) {
+        e.preventDefault();
+        insertWindow();
+      }
     });
   }
 }
@@ -47,12 +54,16 @@ function insertWindow() {
       const body = document.getElementsByTagName('body')[0];
       const window = document.createElement('div');
       window.className = 'impulse-window';
+      window.id = 'impulse-window';
       window.innerHTML = data;
       body.append(window);
 
       const overlay = document.createElement('div');
       overlay.className = 'impulse-overlay';
+      overlay.id = 'impulse-overlay';
       body.append(overlay);
+
+      startup();
 
     }).catch(err => {
     console.log('Error loading Impulse window:' + err)
