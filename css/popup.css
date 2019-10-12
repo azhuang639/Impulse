@@ -5,4 +5,61 @@ body {
 
 .title {
     text-align: center;
+    color: red;
+}
+
+.pic {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    border-width: 1px;
+    border-color: blue;
+    border-style: solid;
+}
+
+p {
+    font-family: "Gill Sans MT";
+    font-size: 13px;
+    text-align: center;
+}
+
+button {
+    background-color: white;
+    border: 1px solid darkred;
+    color: darkred;
+    padding: 8px 100px;
+    text-align: center;
+    font-family: "Gill Sans MT";
+    font-size: 13px;
+    margin: 0 auto;
+    border-radius: 8px;
+    -webkit-transition-duration: 0.6s;
+    transition-duration: 0.6s;
+}
+
+button:hover {
+    background-color: darkred;
+    color: white;
+}
+
+.amount {
+    text-align: center;
+    color: green;
+    background-color: lightyellow;
+    padding: 2px;
+    margin: 0 15px;
+
+}
+
+.stats {
+    border-radius: 15px;
+    padding: 5px;
+    margin: 0 15px;
+
+}
+
+.linkToData {
+    font-weight: bold;
 }
