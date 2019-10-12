@@ -127,7 +127,7 @@ function yes4(){
     if (num_yes>=2)
     {
         document.getElementById("good?").innerHTML =
-            "Don't worry, it isn't an impulse purchase.";
+            "Don't worry, this isn't an impulse purchase.";
         document.getElementById("impulse-close").style.display = "block";
     }
     else
@@ -144,7 +144,7 @@ function no4(){
     if (num_yes>=2)
     {
         document.getElementById("good?").innerHTML =
-            "Don't worry, it isn't an impulse purchase.";
+            "Don't worry, this isn't an impulse purchase.";
         document.getElementById("impulse-close").style.display = "block";
     }
     else
