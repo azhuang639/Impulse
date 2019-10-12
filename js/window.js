@@ -3,8 +3,28 @@ var not_bought = 0;
 var num_yes = 0;
 var num_no = 0;
 var price;
-console.log('HERE HERE');
+console.log('HERE HERE wee');
 // window.onload = startup;
+
+//setting up database
+let pricesArray = localStorage.getItem('prices') ?
+    JSON.parse(localStorage.getItem('prices')) : [];
+localStorage.setItem('prices', JSON.stringify(pricesArray));
+
+let productsArray = localStorage.getItem('products') ?
+    JSON.parse(localStorage.getItem('products')) : [];
+localStorage.setItem('products', JSON.stringify(productsArray));
+
+let datesArray = localStorage.getItem('dates') ?
+    JSON.parse(localStorage.getItem('dates')) : [];
+localStorage.setItem('dates', JSON.stringify(datesArray));
+
+let isImpulsesArray = localStorage.getItem('isImpulses') ?
+    JSON.parse(localStorage.getItem('isImpulses')) : [];
+localStorage.setItem('isImpulses', JSON.stringify(isImpulsesArray));
+
+//how to parse through data
+//const data = JSON.parse(localStorage.getItem('prices'));
 
 function startup(x){
     console.log('STARTUP WHAT?');
@@ -94,6 +114,8 @@ function no4(){
 
 
 function didBuy(){
+    pricesArray.push(price_val);
+    localStorage.setItem('prices', JSON.stringify(pricesArray));
     bought++;
     console.log('test');
     document.getElementById("failure?").innerHTML =
@@ -103,6 +125,9 @@ function didBuy(){
 }
 
 function didNotBuy(){
+    pricesArray.push(price_val);
+    localStorage.setItem('prices', JSON.stringify(pricesArray));
+
     not_bought++;
     console.log('didn\'t buy item');
     document.getElementById("failure?").innerHTML =
