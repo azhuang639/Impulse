@@ -14,12 +14,21 @@
     overflow: scroll;
 }
 
+.cycle-text {
+    font-size: large;
+    display: inline;
+}
+
+.impulse-window p {
+    font-size: medium;
+}
+
 .impulse-button:focus {
     outline: none !important;
 }
 
 .impulse-button {
-    margin: 10px 20px 30px;
+    margin: 10px 20px 40px;
 }
 
 #impulse-close {
@@ -32,51 +41,53 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #888;
-    opacity: 0.6;
+    background-color: #555;
+    opacity: 0.8;
     z-index: 100000;
 }
+
 button {
-    background-color:#44c767;
-    border-radius:10px;
-    border:1px solid #18ab29;
+    /*background-color:#44c767;*/
+    border-radius:5px;
+    /*border:1px solid #18ab29;*/
+    border: none;
     display:inline-block;
     cursor:pointer;
-    color:#ffffff;
+    /*color:#ffffff;*/
     font-family:Arial;
-    font-size:12px;
-    padding:6px 18px;
+    /*font-size:12px;*/
+    padding:8px 16px;
     text-decoration:none;
-    text-shadow:0px 1px 0px #2f6627;
-    transition-duration: 0.5s;
-    font-weight: bold
+    /*text-shadow: 0px 1px 0px #2f6627;*/
+    font-weight: bold;
+
+    margin: 8px 0 20px 0;
+    /*background: linear-gradient(65deg, rgb(18, 116, 237) -25%, rgb(18, 116, 237) 100%);*/
+    background-color: white;
+    color: #1274ED;
+    box-shadow: 0 4px 12px rgba(32,43,54,0.42);
+    width: 180px;
+    height: 40px;
+    font-size: 18px;
 }
+
+.impulse-clicked {
+    /*background: linear-gradient(65deg, rgb(18, 116, 237) -25%, rgb(18, 116, 237) 100%);*/
+    background: linear-gradient(65deg, #1274ED 0, #4992F0 100%);
+    color: white;
+}
+
+.impulse-price {
+    display: inline;
+    font-weight: bold;"
+}
+
 button:hover {
-    box-shadow: 0px 6px 20px -7px #276873;
+    /*box-shadow: 0px 6px 20px -7px #276873;*/
+    box-shadow: 0 6px 14px rgba(32,43,54,0.42);
 }
 button:active {
-    position:relative;
-    top:1px;
+    /*position:relative;*/
+    /*top:1px;*/
 }
-button2{
-    background-color:#ff0000;
-    border-radius:10px;
-    border:1px solid #8b0000;
-    display:inline-block;
-    cursor:pointer;
-    color:#ffffff;
-    font-family:Arial;
-    font-size:12px;
-    padding:6px 18px;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #660708;
-    transition-duration: 0.5s;
-    font-weight: bold
-}
-button2:hover {
-    box-shadow: 0px 6px 20px -7px #4c090f;;
-}
-button2:active {
-    position:relative;
-    top:1px;
-}
+
