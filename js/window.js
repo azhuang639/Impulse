@@ -127,13 +127,13 @@ function yes4(){
     if (num_yes>=2)
     {
         document.getElementById("good?").innerHTML =
-            "This shouldn't be an impulse purchase. ";
+            "Don't worry, it isn't an impulse purchase.";
         document.getElementById("impulse-close").style.display = "block";
     }
     else
     {
         document.getElementById("failure?").innerHTML =
-            "This is an impulse purchase. Don't buy it ";
+            "This is an impulse purchase. Don't buy it!";
         document.getElementById("buy?").style.display = "block";
     }
 }
@@ -144,13 +144,13 @@ function no4(){
     if (num_yes>=2)
     {
         document.getElementById("good?").innerHTML =
-            "This shouldn't be an impulse purchase. ";
+            "Don't worry, it isn't an impulse purchase.";
         document.getElementById("impulse-close").style.display = "block";
     }
     else
     {
         document.getElementById("failure?").innerHTML =
-            "This is an impulse purchase. Don't buy it ";
+            "This is an impulse purchase. Don't buy it!";
         document.getElementById("buy?").style.display = "block";
     }
 }
