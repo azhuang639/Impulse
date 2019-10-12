@@ -1,0 +1,22 @@
+.impulse-window {
+    position: fixed;
+    background-color: #fff;
+    left: 10%;
+    right: 10%;
+    top: 10%;
+    bottom: 10%;
+    z-index: 100001;
+    border-radius: 5px;
+    box-shadow: 0 20px 80px rgba(32,43,54,0.12);
+}
+
+.impulse-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #888;
+    opacity: 0.6;
+    z-index: 100000;
+}
