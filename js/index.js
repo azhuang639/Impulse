@@ -2,6 +2,9 @@ trackImpulse();
 
 function trackImpulse() {
   let targetButton;
+  var price;
+  var price_val;
+
   const url = location.href;
   if (!url) {
     return;
@@ -9,6 +12,22 @@ function trackImpulse() {
 
   if (url.includes('amazon.com')) {
     targetButton = document.getElementById('add-to-cart-button');
+
+    if (targetButton){
+        price = document.getElementById('priceblock_ourprice');
+        if (!price) price = document.getElementById('priceblock_dealprice');
+        console.log(price);
+        if (price) {
+            price_val = price.innerHTML;
+            console.log(price_val);
+            let length = price_val.length;
+            price_val = price_val.substring(1,length);
+            console.log(price_val);
+
+        }
+    }
+
+
   } else if (url.includes('ebay.com')) {
     targetButton = null; // replace with the id of the button we want to track
   }
