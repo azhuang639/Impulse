@@ -6,6 +6,14 @@
   "icons": {
     "128": "assets/logo.png"
   },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": [ "css/index.css" ],
+      "js": [ "js/index.js" ],
+      "run_at": "document_end"
+    }
+  ],
   "browser_action": {
     "default_icon": "assets/logo.png",
     "default_popup": "html/popup.html"
