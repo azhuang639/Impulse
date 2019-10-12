@@ -4,7 +4,7 @@
 
 trackImpulse();
 var price_val;
-
+var product;
 function trackImpulse() {
   let targetButton;
   var price;
@@ -30,6 +30,10 @@ function trackImpulse() {
             console.log(price_val);
 
         }
+        var pro = document.getElementById("productTitle");
+        product = pro.innerHTML;
+        product = product.trim();
+        console.log(product);
     }
 
 
