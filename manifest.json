@@ -20,7 +20,8 @@
     "default_popup": "html/popup.html"
   },
   "permissions": [
-    "tabs"
+    "tabs",
+    "activeTab"
   ],
   "web_accessible_resources": [
     "html/window.html"
