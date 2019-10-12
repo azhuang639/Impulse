@@ -4,6 +4,12 @@ var num_yes = 0;
 var num_no = 0;
 var price;
 console.log('HERE HERE wee');
+
+var example = ['If you saved and invested this money now, in ten years, you would have $',
+    'You could have bought this many Costco Hot Dogs:',
+    'You could have bought this many Chipotle Burritos:',
+    'You could have bought this many gallons of gas:'];
+var cost = [0,1.5,8,2.50];
 // window.onload = startup;
 
 //setting up database
@@ -48,9 +54,38 @@ function startup(x){
     document.getElementById("impulse-close").addEventListener('click', closeWindow);
     price = x;
     document.getElementById("dis").innerHTML =
-        "$"+price_val;
+        "$"+price_val;a
+    document.getElementById("possible").innerHTML = example[3];
+    document.getElementById("saved").innerHTML = "" + Math.floor(price/cost[3])+"";
+    cost[0] = (Math.round(price_val * (Math.pow(1.10, 10))));
+    textSequence(0);
+
 }
 
+
+
+
+function textSequence(i) {
+
+    if (example.length > i) {
+        setTimeout(function() {
+            document.getElementById("possible").innerHTML = example[i];
+            if (i == 0)
+            {
+                document.getElementById("saved").innerHTML = "" + cost[0] +"." ;
+            }
+            else
+            {
+                document.getElementById("saved").innerHTML = "" + Math.floor(price/cost[i])+"";
+            }
+            textSequence(++i);
+        }, 5000); // 1 second (in milliseconds)
+
+    } else if (example.length == i) { // Loop
+        textSequence(0);
+    }
+
+}
 function yes1(){
     num_yes++;
     document.getElementById("q2").style.display = "block";
