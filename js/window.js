@@ -2,12 +2,13 @@ var bought = 0;
 var not_bought = 0;
 var num_yes = 0;
 var num_no = 0;
-
+var price;
 console.log('HERE HERE');
 // window.onload = startup;
 
-function startup(){
-    console.log("STARTUP WHAT?");
+function startup(x){
+    console.log('STARTUP WHAT?');
+    console.log(x);
     document.getElementById("impulse-close").style.display = "none";
     document.getElementById("q2").style.display = "none";
     document.getElementById("q3").style.display = "none";
@@ -25,7 +26,9 @@ function startup(){
     document.getElementById("did-buy").addEventListener('click', didBuy);
     document.getElementById("did-not-buy").addEventListener('click', didNotBuy);
     document.getElementById("impulse-close").addEventListener('click', closeWindow);
-
+    price = x;
+    document.getElementById("dis").innerHTML =
+        "$"+price_val;
 }
 
 function yes1(){

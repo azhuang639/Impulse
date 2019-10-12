@@ -3,11 +3,12 @@
 // document.head.appendChild(imported);
 
 trackImpulse();
+var price_val;
 
 function trackImpulse() {
   let targetButton;
   var price;
-  var price_val;
+
 
   const url = location.href;
   if (!url) {
@@ -63,7 +64,8 @@ function insertWindow() {
       overlay.id = 'impulse-overlay';
       body.append(overlay);
 
-      startup();
+      startup(price_val);
+
 
     }).catch(err => {
     console.log('Error loading Impulse window:' + err)
