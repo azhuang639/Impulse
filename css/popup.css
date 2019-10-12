@@ -1,6 +1,6 @@
 body {
     width: 320px;
-    height: 480px;
+    height: 440px;
 }
 
 .title {
@@ -14,9 +14,6 @@ body {
     height: 50px;
     margin-right: auto;
     margin-left: auto;
-    border-width: 1px;
-    border-color: blue;
-    border-style: solid;
 }
 
 p {
@@ -25,11 +22,12 @@ p {
     text-align: center;
 }
 
-button {
+.pause {
     background-color: white;
     border: 1px solid darkred;
     color: darkred;
-    padding: 8px 100px;
+    padding: 8px;
+    width: 300px;
     text-align: center;
     font-family: "Gill Sans MT";
     font-size: 13px;
@@ -39,10 +37,32 @@ button {
     transition-duration: 0.6s;
 }
 
-button:hover {
+.pause:hover {
     background-color: darkred;
     color: white;
 }
+
+
+.resume {
+    background-color: white;
+    border: 1px solid green;
+    color: green;
+    width: 300px;
+    padding: 8px;
+    text-align: center;
+    font-family: "Gill Sans MT";
+    font-size: 13px;
+    margin: 0 auto;
+    border-radius: 8px;
+    -webkit-transition-duration: 0.6s;
+    transition-duration: 0.6s;
+}
+
+.resume:hover {
+    background-color: green;
+    color: white;
+}
+
 
 .amount {
     text-align: center;

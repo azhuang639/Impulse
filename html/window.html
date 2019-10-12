@@ -5,31 +5,32 @@
         <title>WHY U BUY?</title>
         <link rel="stylesheet" href="../css/window.css">
         <script src="../js/window.js"></script>
+<!--        <script src="../js/index.js"></script>-->
     </head>
     <body>
         <h1>Let's see whether this is a good decision or not.</h1>
     <!--add in button functionality-->
-
         <p id = "q1">Were you planning to buy this item before you started shopping?</p>
-        <button onClick = "yes1()" >Yes</button>
-        <button2 onclick = "no1()" >No</button2>
+
+        <button class="impulse-button" id="yes1" >Yes</button>
+        <button class="impulse-button" id="no1">No</button>
 
         <div id = "q2">
         <p >Do you actually need this in your life?</p>
-        <button onclick = "yes2()" >Yes</button>
-        <button2 onclick = "no2()" >No</button2>
+        <button class="impulse-button" id="yes2" >Yes</button>
+        <button class="impulse-button" id="no2">No</button>
         </div>
 
         <div id = "q3">
             <p >Can you live without it?</p>
-            <button onclick = "yes3()">Yes</button>
-            <button2 onclick = "no3()">No</button2>
+            <button class="impulse-button" id="yes3">Yes</button>
+            <button class="impulse-button" id="no3">No</button>
         </div>
 
         <div id = "q4">
             <p>Is this for personal enjoyment?</p>
-            <button onclick = "yes4()">Yes</button>
-            <button2 onclick = "no4()">No</button2>
+            <button class="impulse-button" id="yes4">Yes</button>
+            <button class="impulse-button" id="no4">No</button>
         </div>
 
 
@@ -38,13 +39,13 @@
         <div id = "buy?">
         <h2>Now, are you going to buy this item? (y/n)</h2>
 
-        <button onclick = "didBuy()">yes</button>
-        <button onclick = "didNotBuy()">no</button>
+        <button class="impulse-button" id="did-buy">yes</button>
+        <button id="did-not-buy">no</button>
 
-        <p id = "failure?"></p>
+        <h1 id = "failure?"></h1>
         </div>
-        <button id = "close" onclick = "closewindow()">close</button>
 
+        <button class="impulse-button" id = "impulse-close">close</button>
 
     </body>
 </html>
