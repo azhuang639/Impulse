@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+  "name": "Impulse",
+  "description": "Prevent impulse purchases online!",
+  "version": "1.00",
+  "icons": {
+    "128": "assets/logo.png"
+  },
+  "browser_action": {
+    "default_icon": "assets/logo.png",
+    "default_popup": "html/popup.html"
+  },
+  "permissions": [
+    "tabs"
+  ]
+}
