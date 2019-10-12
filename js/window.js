@@ -49,8 +49,8 @@ function yes4(){
     if (num_yes>=2)
     {
         document.getElementById("good?").innerHTML =
-            "This shouldn't be an imps purchase. ";
-        close_appear();
+            "This shouldn't be an impulse purchase. ";
+        document.getElementById("close").style.display = "block";
     }
     else
     {
@@ -66,7 +66,7 @@ function no4(){
     {
         document.getElementById("good?").innerHTML =
             "This shouldn't be an impulse purchase. ";
-        close_appear();
+        document.getElementById("close").style.display = "block";
     }
     else
     {
