@@ -7,11 +7,30 @@
         <script src="../js/window.js"></script>
     </head>
     <body>
-        <h1>Do you really need to buy this item?</h1>
-        <p></p>
+        <h1>Let's see whether this is a good decision or not.</h1>
     <!--add in button functionality-->
+
+        <p id = "q1">Were you planning to buy this item before you started shopping?</p>
+        <button onclick = "yes1()">Yes</button>
+        <button onclick = "no1()">No</button>
+
+        <p id = "q2">Do you actually need this in your life?</p>
+        <button onclick = "yes2()">Yes</button>
+        <button onclick = "no2">No</button>
+
+        <p id = "q3">Can you live without it?</p>
+        <button onclick = "yes3()">Yes</button>
+        <button onclick = "no3()">No</button>
+
+        <p id = "q4">Is this for personal enjoyment?</p>
+        <button onclick = "yes4()">Yes</button>
+        <button onclick = "no4()">No</button>
+
+        <p id = "good?"></p>
+
+
         <h2>Now, are you going to buy this item? (y/n)</h2>
-    <!--button for yes or no and add in functionality for each button-->
+
         <button onclick = "didBuy()">yes</button>
         <button onclick = "didNotBuy()">no</button>
 
