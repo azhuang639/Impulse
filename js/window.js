@@ -12,6 +12,7 @@ function startup(){
     document.getElementById("q2").style.display = "none";
     document.getElementById("q3").style.display = "none";
     document.getElementById("q4").style.display = "none";
+    document.getElementById("buy?").style.display = "none";
 }
 
 function yes1(){
@@ -55,6 +56,7 @@ function yes4(){
     {
         document.getElementById("failure?").innerHTML =
             "This is an impulse purchase. Don't buy it ";
+        document.getElementById("buy?").style.display = "block";
     }
 }
 
@@ -70,6 +72,7 @@ function no4(){
     {
         document.getElementById("failure?").innerHTML =
             "This is an impulse purchase. Don't buy it ";
+        document.getElementById("buy?").style.display = "block";
     }
 }
 

@@ -11,22 +11,31 @@
     <!--add in button functionality-->
 
         <p id = "q1">Were you planning to buy this item before you started shopping?</p>
-        <button onclick = "yes1()">Yes</button>
-        <button onclick = "no1()">No</button>
+        <button onclick = "yes1()" >Yes</button>
+        <button onclick = "no1()" >No</button>
 
-        <p id = "q2">Do you actually need this in your life?</p>
-        <button onclick = "yes2()">Yes</button>
-        <button onclick = "no2">No</button>
+        <div id = "q2">
+        <p >Do you actually need this in your life?</p>
+        <button onclick = "yes2()" >Yes</button>
+        <button onclick = "no2()" >No</button>
+        </div>
 
-        <p id = "q3">Can you live without it?</p>
-        <button onclick = "yes3()">Yes</button>
-        <button onclick = "no3()">No</button>
+        <div id = "q3">
+            <p >Can you live without it?</p>
+            <button onclick = "yes3()">Yes</button>
+            <button onclick = "no3()">No</button>
+        </div>
 
-        <p id = "q4">Is this for personal enjoyment?</p>
-        <button onclick = "yes4()">Yes</button>
-        <button onclick = "no4()">No</button>
+        <div id = "q4">
+            <p>Is this for personal enjoyment?</p>
+            <button onclick = "yes4()">Yes</button>
+            <button onclick = "no4()">No</button>
+        </div>
+
 
         <p id = "good?"></p>
+
+        <div id = "buy?">
 
 
         <h2>Now, are you going to buy this item? (y/n)</h2>
@@ -37,5 +46,6 @@
         <p id = "failure?"></p>
         <button id = "close" onclick = "closewindow()">close</button>
 
+        </div>
     </body>
 </html>
