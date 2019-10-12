@@ -21,7 +21,11 @@
   },
   "permissions": [
     "tabs",
+<<<<<<< Updated upstream
     "activeTab"
+=======
+    "storage"
+>>>>>>> Stashed changes
   ],
   "web_accessible_resources": [
     "html/window.html"

@@ -2,6 +2,11 @@
 // imported.src = 'window.js';
 // document.head.appendChild(imported);
 
+let active;
+chrome.storage.local.get({active: true}, function(result) {
+  active = result.active;
+});
+
 trackImpulse();
 var price_val;
 var product;
@@ -44,8 +49,8 @@ function trackImpulse() {
 
   if (targetButton) {
     targetButton.addEventListener('click', (e) => {
-      // If impulse window has not already been shown
-      if (!document.getElementById('impulse-checked')) {
+      // If impulse window has not already been shown and Impulse is active
+      if (active && !document.getElementById('impulse-checked')) {
         e.preventDefault();
         insertWindow();
       }
