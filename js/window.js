@@ -29,6 +29,8 @@ function startup(x){
     price = x;
     document.getElementById("dis").innerHTML =
         "$"+price_val;
+    document.getElementById("price-invested").innerHTML =
+      "$"+(Math.round(price_val * (Math.pow(1.10, 10))));
 }
 
 function yes1(){

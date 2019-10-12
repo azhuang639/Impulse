@@ -8,6 +8,22 @@
     z-index: 100001;
     border-radius: 5px;
     box-shadow: 0 20px 80px rgba(32,43,54,0.12);
+    padding: 20px;
+    text-align: center;
+    color: #333;
+    overflow: scroll;
+}
+
+.impulse-button:focus {
+    outline: none !important;
+}
+
+.impulse-button {
+    margin: 10px 20px 30px;
+}
+
+#impulse-close {
+    margin: 0 auto;
 }
 
 .impulse-overlay {
@@ -36,7 +52,7 @@ button {
     font-weight: bold
 }
 button:hover {
-    box-shadow: 0px 6px 20px -7px #276873;;
+    box-shadow: 0px 6px 20px -7px #276873;
 }
 button:active {
     position:relative;
