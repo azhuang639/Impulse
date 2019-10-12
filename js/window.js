@@ -54,7 +54,7 @@ function startup(x){
     document.getElementById("impulse-close").addEventListener('click', closeWindow);
     price = x;
     document.getElementById("dis").innerHTML =
-        "$"+price_val;a
+        "$"+price_val;
     document.getElementById("possible").innerHTML = example[3];
     document.getElementById("saved").innerHTML = "" + Math.floor(price/cost[3])+"";
     cost[0] = (Math.round(price_val * (Math.pow(1.10, 10))));
@@ -88,34 +88,41 @@ function textSequence(i) {
 }
 function yes1(){
     num_yes++;
+    document.getElementById("yes1").className += " impulse-clicked";
     document.getElementById("q2").style.display = "block";
 }
 
 function no1(){
     num_no++;
     document.getElementById("q2").style.display = "block";
+    document.getElementById("no1").className += " impulse-clicked";
 }
 
 function yes2(){
     num_yes++;
     document.getElementById("q3").style.display = "block";
+    document.getElementById("yes2").className += " impulse-clicked";
 }
 
 function no2(){
     num_no++;
     document.getElementById("q3").style.display = "block";
+    document.getElementById("no2").className += " impulse-clicked";
 }
 
 function yes3(){
     num_no++;
     document.getElementById("q4").style.display = "block";
+    document.getElementById("yes3").className += " impulse-clicked";
 }
 
 function no3(){
     num_yes++;
     document.getElementById("q4").style.display = "block";
+    document.getElementById("no3").className += " impulse-clicked";
 }
 function yes4(){
+    document.getElementById("yes4").className += " impulse-clicked";
     num_no++;
     if (num_yes>=2)
     {
@@ -132,6 +139,7 @@ function yes4(){
 }
 
 function no4(){
+    document.getElementById("no4").className += " impulse-clicked";
     num_yes++;
     if (num_yes>=2)
     {
@@ -163,6 +171,7 @@ function didBuy(){
     isImpulsesArray.push(true);
     localStorage.setItem('isImpulses', JSON.stringify(isImpulsesArray));
 
+    document.getElementById("did-buy").className += " impulse-clicked";
     bought++;
     console.log('test');
     document.getElementById("failure?").innerHTML =
@@ -186,6 +195,7 @@ function didNotBuy(){
     isImpulsesArray.push(false);
     localStorage.setItem('isImpulses', JSON.stringify(isImpulsesArray));
 
+    document.getElementById("did-not-buy").className += " impulse-clicked";
     not_bought++;
     console.log('didn\'t buy item');
     document.getElementById("failure?").innerHTML =

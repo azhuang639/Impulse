@@ -8,12 +8,12 @@
 <!--        <script src="../js/index.js"></script>-->
     </head>
     <body>
-        <h1 style="display: inline;">This would cost you </h1><h1 style="display: inline;" id = "dis"> </h1><br><br>
-        <h5 style="display: inline;" id = "possible">
-             </h5>
-        <h5  style="display: inline;" id="saved"></h5>
+        <h1 class="impulse-price">This would cost you </h1><h1 class="impulse-price" id = "dis"> </h1><br><br>
+        <p class="cycle-text" id = "possible">
+             </p>
+        <p class="cycle-text" id="saved"></p>
         <br><br><br>
-        <h1>Let's see whether this is a good decision or not.</h1>
+        <h2>Let's see whether this is a good decision or not.</h2>
         <br><br>
 
     <!--add in button functionality-->
@@ -44,12 +44,14 @@
         <p id = "good?"></p>
 
         <div id = "buy?">
-        <h2>Now, are you going to buy this item? (y/n)</h2>
+            <p style="font-size: 20px;">Now, are you going to buy this item? (y/n)</p>
 
-        <button class="impulse-button" id="did-buy">yes</button>
-        <button id="did-not-buy">no</button>
+            <button class="impulse-button" id="did-buy">yes</button>
+            <button class="impulse-button" id="did-not-buy">no</button>
 
-        <h1 id = "failure?"></h1>
+            <h2 id = "failure?"></h2>
+            <br>
+            <br>
         </div>
         <div style="text-align: center;">
             <button class="impulse-button" id = "impulse-close">close</button>
