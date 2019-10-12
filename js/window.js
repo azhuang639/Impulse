@@ -151,6 +151,18 @@ function no4(){
 function didBuy(){
     pricesArray.push(price_val);
     localStorage.setItem('prices', JSON.stringify(pricesArray));
+
+    productsArray.push(product);
+    localStorage.setItem('products', JSON.stringify(productsArray));
+
+    var today = new Date();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    datesArray.push(date);
+    localStorage.setItem('dates', JSON.stringify(datesArray));
+
+    isImpulsesArray.push(true);
+    localStorage.setItem('isImpulses', JSON.stringify(isImpulsesArray));
+
     bought++;
     console.log('test');
     document.getElementById("failure?").innerHTML =
@@ -162,6 +174,17 @@ function didBuy(){
 function didNotBuy(){
     pricesArray.push(price_val);
     localStorage.setItem('prices', JSON.stringify(pricesArray));
+
+    productsArray.push(product);
+    localStorage.setItem('products', JSON.stringify(productsArray));
+
+    var today = new Date();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    datesArray.push(date);
+    localStorage.setItem('dates', JSON.stringify(datesArray));
+
+    isImpulsesArray.push(false);
+    localStorage.setItem('isImpulses', JSON.stringify(isImpulsesArray));
 
     not_bought++;
     console.log('didn\'t buy item');
