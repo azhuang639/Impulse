@@ -4,6 +4,10 @@ var active = true;
 
 document.addEventListener('DOMContentLoaded', function() {
     var link = document.getElementById('pause');
+    var clearLink = document.getElementById('clearStorage');
+    clearLink.addEventListener('click', function() {
+        clearStorage();
+    })
     link.addEventListener("load", function() {
         loading(link);
     });
@@ -29,4 +33,8 @@ function loading(element) {
         element.className = "resume";
         element.innerHTML = "Resume Impulse";
     }
+}
+
+function clearStorage() {
+    localStorage.clear();
 }
