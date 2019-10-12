@@ -1,5 +1,17 @@
 console.log('Popup opened');
 
+//calculating weekly, monthly, and lifetime purchases
+var sum = 0.00;
+let pricesArray = localStorage.getItem('prices') ?
+    JSON.parse(localStorage.getItem('prices')) : [];
+localStorage.setItem('prices', JSON.stringify(pricesArray));
+pricesArray.forEach(item => {
+    sum+= parseFloat(item);
+})
+document.getElementById("lifetime").innerHTML =
+    "$"+sum;
+
+
 var active = true;
 
 document.addEventListener('DOMContentLoaded', function() {

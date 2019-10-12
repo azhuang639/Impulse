@@ -5,6 +5,7 @@
 trackImpulse();
 var price_val;
 var product;
+
 function trackImpulse() {
   let targetButton;
   var price;
