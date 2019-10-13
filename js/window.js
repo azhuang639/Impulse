@@ -148,13 +148,13 @@ function no1(){
 }
 
 function yes2(){
-    num_yes++;
+    num_no++;
     document.getElementById("q3").style.display = "block";
     document.getElementById("yes2").className += " impulse-clicked";
 }
 
 function no2(){
-    num_no++;
+    num_yes++;
     document.getElementById("q3").style.display = "block";
     document.getElementById("no2").className += " impulse-clicked";
 }
@@ -173,7 +173,7 @@ function no3(){
 function yes4(){
     document.getElementById("yes4").className += " impulse-clicked";
     num_no++;
-    if (num_yes>=2)
+    if (num_yes >= 3)
     {
         document.getElementById("good?").innerHTML =
             "Don't worry, this doesn't seem to be an impulsive purchase.";
@@ -190,7 +190,7 @@ function yes4(){
 function no4(){
     document.getElementById("no4").className += " impulse-clicked";
     num_yes++;
-    if (num_yes>=2)
+    if (num_yes >= 3)
     {
         document.getElementById("good?").innerHTML =
             "Don't worry, this isn't an impulse purchase.";
