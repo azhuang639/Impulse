@@ -139,36 +139,60 @@ function yes1(){
     num_yes++;
     document.getElementById("yes1").className += " impulse-clicked";
     document.getElementById("q2").style.display = "block";
+    setTimeout(function() {
+        document.getElementById("q2").classList.toggle('show-hidden');
+    }, 100);
+    // document.getElementById("q2").classList.toggle('shofw-hidden');
 }
 
 function no1(){
     num_no++;
     document.getElementById("q2").style.display = "block";
     document.getElementById("no1").className += " impulse-clicked";
+    setTimeout(function() {
+        document.getElementById("q2").classList.toggle('show-hidden');
+    }, 100);
+    // document.getElementById("q2").classList.toggle('show-hidden');
 }
 
 function yes2(){
     num_no++;
     document.getElementById("q3").style.display = "block";
     document.getElementById("yes2").className += " impulse-clicked";
+    setTimeout(function() {
+        document.getElementById("q3").classList.toggle('show-hidden');
+    }, 100);
+    // document.getElementById("q3").classList.toggle('show-hidden');
 }
 
 function no2(){
     num_yes++;
     document.getElementById("q3").style.display = "block";
     document.getElementById("no2").className += " impulse-clicked";
+    setTimeout(function() {
+        document.getElementById("q3").classList.toggle('show-hidden');
+    }, 100);
+    // document.getElementById("q3").classList.toggle('show-hidden');
 }
 
 function yes3(){
     num_no++;
     document.getElementById("q4").style.display = "block";
     document.getElementById("yes3").className += " impulse-clicked";
+    setTimeout(function() {
+        document.getElementById("q4").classList.toggle('show-hidden');
+    }, 100);
+    // document.getElementById("q4").classList.toggle('show-hidden');
 }
 
 function no3(){
     num_yes++;
     document.getElementById("q4").style.display = "block";
     document.getElementById("no3").className += " impulse-clicked";
+    setTimeout(function() {
+        document.getElementById("q4").classList.toggle('show-hidden');
+    }, 100);
+    // document.getElementById("q4").classList.toggle('show-hidden');
 }
 function yes4(){
     document.getElementById("yes4").className += " impulse-clicked";
@@ -178,12 +202,21 @@ function yes4(){
         document.getElementById("good?").innerHTML =
             "Don't worry, this doesn't seem to be an impulsive purchase.";
         document.getElementById("impulse-close").style.display = "block";
+        setTimeout(function() {
+            document.getElementById("hidden-impulse-button").classList.toggle('show-hidden');
+        }, 100);
+        // document.getElementById("hidden-impulse-button").classList.toggle('show-hidden');
+
     }
     else
     {
         document.getElementById("failure?").innerHTML =
             "This is an impulsive purchase. Don't buy it!";
         document.getElementById("buy?").style.display = "block";
+        setTimeout(function() {
+            document.getElementById("buy?").classList.toggle('show-hidden');
+        }, 100);
+        // document.getElementById("buy?").classList.toggle('show-hidden');
     }
 }
 
@@ -195,12 +228,20 @@ function no4(){
         document.getElementById("good?").innerHTML =
             "Don't worry, this isn't an impulse purchase.";
         document.getElementById("impulse-close").style.display = "block";
+        setTimeout(function() {
+            document.getElementById("impulse-close").classList.toggle('show-hidden');
+        }, 100);
+        // document.getElementById("impulse-close").classList.toggle('show-hidden');
     }
     else
     {
         document.getElementById("failure?").innerHTML =
             "This is an impulsive purchase. Don't buy it!";
         document.getElementById("buy?").style.display = "block";
+        setTimeout(function() {
+            document.getElementById("buy?").classList.toggle('show-hidden');
+        }, 100);
+        // document.getElementById("buy?").classList.toggle('show-hidden');
     }
 }
 
@@ -250,6 +291,7 @@ function didNotBuy(){
     document.getElementById("failure?").innerHTML =
         "Congrats for controlling your impulses! Please exit this tab.";
     close_appear();
+    closeTab();
     //document.getElementById("close").innerHTML = "close window";
    // window.close();
 }
@@ -269,6 +311,10 @@ function close_appear() {
     var x = document.getElementById("impulse-close");
     if (x.style.display === "none") {
         x.style.display = "block";
+        setTimeout(function() {
+            document.getElementById("impulse-close").classList.toggle('show-hidden');
+        }, 100);
+        // document.getElementById("impulse-close").classList.toggle('show-hidden');
     } else {
         x.style.display = "none";
     }
