@@ -14,7 +14,7 @@ chrome.storage.local.get(['prices'], function(result) {
                 console.log("products array is " + productsArray);
 
                 for (i = 0; i < pricesArray.length; i++) {
-                    listElement = "Product Name: " + productsArray[i] + ", Date: " + datesArray[i] + ", Price: $" + Number.parseFloat(pricesArray[i]).toFixed(2) + ", Did Purchase? " + isImpulsesArray[i];
+                    listElement = "Product Name: " + productsArray[i] + ", Date: " + datesArray[i] + ", Price: $" + Number.parseFloat(pricesArray[i]).toFixed(2) + ", Did Purchase?: " + isImpulsesArray[i];
                     liMaker(listElement);
                 }
             });
