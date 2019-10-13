@@ -1,6 +1,12 @@
+# Impulse
+A chrome extension to help stop you from making impulsive purchases. Best Beginner Hack and Runner-Up for Best Financial Hack (sponsored by Capital One) at HackNC 2019.
+
+_Created by [Alex Zhuang](https://github.com/azhuang639), [Billy Luqiu](https://github.com/bluqiu001), [Alan Bi](https://github.com/alankbi), and [Matthew Huang](https://github.com/matthewhuang457)._
+
+
 ## Who we are
 
-We are an all-freshman team from Duke University.
+We are an all-freshman team from Duke University. 
 
 ## Inspiration
 
