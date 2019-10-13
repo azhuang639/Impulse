@@ -3,6 +3,8 @@ var not_bought = 0;
 var num_yes = 0;
 var num_no = 0;
 var price;
+var today;
+var date;
 console.log('HERE HERE wee');
 
 var example = ['If you saved and invested this money now, in ten years, you would have $',
@@ -13,24 +15,60 @@ var cost = [0,1.5,8,2.50];
 // window.onload = startup;
 
 //setting up database
-let pricesArray = localStorage.getItem('prices') ?
-    JSON.parse(localStorage.getItem('prices')) : [];
-localStorage.setItem('prices', JSON.stringify(pricesArray));
 
-let productsArray = localStorage.getItem('products') ?
-    JSON.parse(localStorage.getItem('products')) : [];
-localStorage.setItem('products', JSON.stringify(productsArray));
+let pricesArray;
+chrome.storage.local.get(['prices'], function(result) {
+   pricesArray = result.prices ? result.prices : [];
+});
+chrome.storage.local.set({'prices':pricesArray}, function() {
+    let data = pricesArray;
+    console.log("successfully stored array" + data);
+});
 
-let datesArray = localStorage.getItem('dates') ?
-    JSON.parse(localStorage.getItem('dates')) : [];
-localStorage.setItem('dates', JSON.stringify(datesArray));
+let productsArray;
+chrome.storage.local.get(['products'], function(result) {
+    productsArray = result.products ? result.products : [];
+});
+chrome.storage.local.set({'products':productsArray}, function() {
+    let data = productsArray;
+    console.log("successfully stored array" + data);
+});
 
-let isImpulsesArray = localStorage.getItem('isImpulses') ?
-    JSON.parse(localStorage.getItem('isImpulses')) : [];
-localStorage.setItem('isImpulses', JSON.stringify(isImpulsesArray));
+let isImpulsesArray;
+chrome.storage.local.get(['isImpulses'], function(result) {
+    isImpulsesArray = result.isImpulses ? result.isImpulses : [];
+});
+chrome.storage.local.set({'isImpulses':isImpulsesArray}, function() {
+    let data = isImpulsesArray;
+    console.log("successfully stored array" + data);
+});
 
-//how to parse through data
-//const data = JSON.parse(localStorage.getItem('prices'));
+let datesArray;
+chrome.storage.local.get(['dates'], function(result) {
+    datesArray = result.dates ? result.dates : [];
+});
+chrome.storage.local.set({'dates':datesArray}, function() {
+    let data = datesArray;
+    console.log("successfully stored array" + data);
+});
+
+/*
+let pricesArray = chrome.storage.local.get('prices') ?
+    JSON.parse(chrome.storage.local.get('prices')) : [];
+chrome.storage.local.set('prices', JSON.stringify(pricesArray));
+
+let productsArray = chrome.storage.local.get('products') ?
+    JSON.parse(chrome.storage.local.get('products')) : [];
+chrome.storage.local.set('products', JSON.stringify(productsArray));
+
+let datesArray = chrome.storage.local.get('dates') ?
+    JSON.parse(chrome.storage.local.get('dates')) : [];
+chrome.storage.local.set('dates', JSON.stringify(datesArray));
+
+let isImpulsesArray = chrome.storage.local.get('isImpulses') ?
+    JSON.parse(chrome.storage.local.get('isImpulses')) : [];
+chrome.storage.local.set('isImpulses', JSON.stringify(isImpulsesArray));
+*/
 
 function startup(x){
     document.getElementById('impulse-logo').src = chrome.extension.getURL('assets/impulse.png');
@@ -169,18 +207,18 @@ function no4(){
 
 function didBuy(){
     pricesArray.push(price_val);
-    localStorage.setItem('prices', JSON.stringify(pricesArray));
+    chrome.storage.local.set({'prices': pricesArray});
 
     productsArray.push(product);
-    localStorage.setItem('products', JSON.stringify(productsArray));
+    chrome.storage.local.set({'products': productsArray});
 
     var today = new Date();
     var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
     datesArray.push(date);
-    localStorage.setItem('dates', JSON.stringify(datesArray));
+    chrome.storage.local.set({'dates': datesArray});
 
     isImpulsesArray.push(true);
-    localStorage.setItem('isImpulses', JSON.stringify(isImpulsesArray));
+    chrome.storage.local.set({'isImpulses': isImpulsesArray});
 
     document.getElementById("did-buy").className += " impulse-clicked";
     bought++;
@@ -193,18 +231,18 @@ function didBuy(){
 
 function didNotBuy(){
     pricesArray.push(price_val);
-    localStorage.setItem('prices', JSON.stringify(pricesArray));
+    chrome.storage.local.set({'prices': pricesArray});
 
     productsArray.push(product);
-    localStorage.setItem('products', JSON.stringify(productsArray));
+    chrome.storage.local.set({'products': productsArray});
 
-    var today = new Date();
-    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    today = new Date();
+    date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
     datesArray.push(date);
-    localStorage.setItem('dates', JSON.stringify(datesArray));
+    chrome.storage.local.set({'dates': datesArray});
 
     isImpulsesArray.push(false);
-    localStorage.setItem('isImpulses', JSON.stringify(isImpulsesArray));
+    chrome.storage.local.set({'isImpulses': isImpulsesArray});
 
     document.getElementById("did-not-buy").className += " impulse-clicked";
     not_bought++;

@@ -1,14 +1,46 @@
 console.log('Popup opened');
 
 //calculating weekly, monthly, and lifetime purchases
-var sum = 0.00;
-let pricesArray = localStorage.getItem('prices') ?
-    JSON.parse(localStorage.getItem('prices')) : [];
-localStorage.setItem('prices', JSON.stringify(pricesArray));
-pricesArray.forEach(item => {
-    sum+= parseFloat(item);
-});
 
+let lifeSum;
+let monthSum;
+let saveSum;
+let currentDay;
+let pastDay;
+let pastDayArray;
+
+chrome.storage.local.get(['prices'], function(result) {
+    chrome.storage.local.get(['isImpulses'], function(impulseResult) {
+        chrome.storage.local.get(['dates'], function(dateResult) {
+            lifeSum = 0;
+            monthSum = 0;
+            saveSum = 0;
+            pricesArray = result.prices ? result.prices : [];
+            isImpulsesArray = impulseResult.isImpulses ? impulseResult.isImpulses : [];
+            datesArray = dateResult.dates ? dateResult.dates : [];
+            console.log("prices array is " + pricesArray);
+            console.log("dates array is " + datesArray);
+            console.log("isImpulses array is " + isImpulsesArray);
+            for (i = 0; i < pricesArray.length; i++) {
+                if (isImpulsesArray[i] == true) {
+                    lifeSum += parseFloat(pricesArray[i]);
+                    today = new Date();
+                    currentDay = (today.getFullYear()*365) + (today.getMonth()*31) + (today.getDate());
+                    pastDayArray = datesArray[i].split("-");
+                    pastDay = (parseInt(pastDayArray[0])*365) + (parseInt(pastDayArray[1])*31) + (parseInt(pastDayArray[2]));
+                    if (currentDay-pastDay <= 31) {
+                        monthSum += parseFloat(pricesArray[i]);
+                    }
+                } else {
+                    saveSum += parseFloat(pricesArray[i]);
+                }
+            }
+            document.getElementById("lifetime").innerHTML = "$" + Number.parseFloat(lifeSum).toFixed(2);
+            document.getElementById("saved").innerHTML = "$" + Number.parseFloat(saveSum).toFixed(2);
+            document.getElementById("monthly").innerHTML = "$" + Number.parseFloat(monthSum).toFixed(2);
+        });
+    });
+});
 
 let active;
 chrome.storage.local.get({active: true}, function(result) {
@@ -18,11 +50,9 @@ chrome.storage.local.get({active: true}, function(result) {
 
 // var active = chrome.storage.local.get('active') ? localStorage.getItem('active') : 'true';
 
+
 document.addEventListener('DOMContentLoaded', function() {
     // careful with using += to modify innerHTML, it'll remove all event listeners i think
-    document.getElementById("lifetime").innerHTML =
-      "$"+sum;
-
 
     var link = document.getElementById('pause');
     var clearLink = document.getElementById('clearStorage');
