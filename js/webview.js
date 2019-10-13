@@ -1,3 +1,5 @@
+let listElement;
+
 chrome.storage.local.get(['prices'], function(result) {
     chrome.storage.local.get(['isImpulses'], function(impulseResult) {
         chrome.storage.local.get(['dates'], function(dateResult) {
@@ -11,7 +13,18 @@ chrome.storage.local.get(['prices'], function(result) {
                 console.log("isImpulses array is " + isImpulsesArray);
                 console.log("products array is " + productsArray);
 
+                for (i = 0; i < pricesArray.length; i++) {
+                    listElement = "Product Name: " + productsArray[i] + ", Date: " + datesArray[i] + ", Price: $" + Number.parseFloat(pricesArray[i]).toFixed(2) + ", Did Purchase? " + isImpulsesArray[i];
+                    liMaker(listElement);
+                }
             });
         });
     });
 });
+
+function liMaker(element) {
+    var node = document.createElement("li");
+    var textnode = document.createTextNode(element);
+    node.appendChild(textnode);
+    document.getElementById("myList").appendChild(node);
+}
