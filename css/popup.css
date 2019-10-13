@@ -1,6 +1,6 @@
 body {
     width: 320px;
-    height: 440px;
+    height: 500px;
 }
 
 .title {
@@ -82,4 +82,8 @@ p {
 
 .linkToData {
     font-weight: bold;
+}
+
+button:focus {
+    outline: none;
 }

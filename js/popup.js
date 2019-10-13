@@ -1,6 +1,5 @@
 console.log('Popup opened');
 
-<<<<<<< Updated upstream
 //calculating weekly, monthly, and lifetime purchases
 var sum = 0.00;
 let pricesArray = localStorage.getItem('prices') ?
@@ -8,13 +7,9 @@ let pricesArray = localStorage.getItem('prices') ?
 localStorage.setItem('prices', JSON.stringify(pricesArray));
 pricesArray.forEach(item => {
     sum+= parseFloat(item);
-})
-document.getElementById("lifetime").innerHTML =
-    "$"+sum;
+});
 
 
-var active = true;
-=======
 let active;
 chrome.storage.local.get({active: true}, function(result) {
     active = result.active;
@@ -22,23 +17,21 @@ chrome.storage.local.get({active: true}, function(result) {
 });
 
 // var active = chrome.storage.local.get('active') ? localStorage.getItem('active') : 'true';
->>>>>>> Stashed changes
 
 document.addEventListener('DOMContentLoaded', function() {
+    // careful with using += to modify innerHTML, it'll remove all event listeners i think
+    document.getElementById("lifetime").innerHTML =
+      "$"+sum;
+
+
     var link = document.getElementById('pause');
     var clearLink = document.getElementById('clearStorage');
     var showStats = document.getElementById('stats');
     clearLink.addEventListener('click', function() {
         clearStorage();
-<<<<<<< Updated upstream
-    })
+    });
     showStats.addEventListener('click', function() {
         insertWindow();
-    })
-    link.addEventListener("load", function() {
-        loading(link);
-=======
->>>>>>> Stashed changes
     });
     // link.addEventListener("load", function() {
     //     loading(link);
@@ -70,8 +63,10 @@ function loading(element) {
 }
 
 function clearStorage() {
-<<<<<<< Updated upstream
-    localStorage.clear();
+    chrome.storage.local.clear();
+    if (!active) {
+        reverse(document.getElementById('pause'));
+    }
 }
 
 
@@ -86,7 +81,4 @@ function newPopup(url) {
         'height=300,width=400,left=10,top=10,' +
         'resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,' +
         'location=no,directories=no,status=yes')
-=======
-    chrome.storage.local.clear();
->>>>>>> Stashed changes
 }

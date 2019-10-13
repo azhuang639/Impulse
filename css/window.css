@@ -79,7 +79,7 @@ button {
 
 .impulse-price {
     display: inline;
-    font-weight: bold;"
+    font-weight: bold;
 }
 
 button:hover {
@@ -89,5 +89,14 @@ button:hover {
 button:active {
     /*position:relative;*/
     /*top:1px;*/
+}
+
+.cycle-text {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.cycle-text.impulse-fade {
+    opacity: 0;
 }
 

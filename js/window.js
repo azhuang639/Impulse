@@ -33,6 +33,8 @@ localStorage.setItem('isImpulses', JSON.stringify(isImpulsesArray));
 //const data = JSON.parse(localStorage.getItem('prices'));
 
 function startup(x){
+    document.getElementById('impulse-logo').src = chrome.extension.getURL('assets/impulse.png');
+
     console.log('STARTUP WHAT?');
     console.log(x);
     document.getElementById("impulse-close").style.display = "none";
@@ -66,9 +68,14 @@ function startup(x){
 
 
 function textSequence(i) {
-
     if (example.length > i) {
         setTimeout(function() {
+            document.getElementById('possible').classList.toggle('impulse-fade');
+            document.getElementById('saved').classList.toggle('impulse-fade');
+        }, 4500);
+        setTimeout(function() {
+
+
             document.getElementById("possible").innerHTML = example[i];
             if (i == 0)
             {
@@ -78,6 +85,10 @@ function textSequence(i) {
             {
                 document.getElementById("saved").innerHTML = "" + Math.floor(price/cost[i])+"";
             }
+
+            document.getElementById('possible').classList.toggle('impulse-fade');
+            document.getElementById('saved').classList.toggle('impulse-fade');
+
             textSequence(++i);
         }, 5000); // 1 second (in milliseconds)
 
@@ -127,13 +138,13 @@ function yes4(){
     if (num_yes>=2)
     {
         document.getElementById("good?").innerHTML =
-            "Don't worry, this isn't an impulse purchase.";
+            "Don't worry, this doesn't seem to be an impulsive purchase.";
         document.getElementById("impulse-close").style.display = "block";
     }
     else
     {
         document.getElementById("failure?").innerHTML =
-            "This is an impulse purchase. Don't buy it!";
+            "This is an impulsive purchase. Don't buy it!";
         document.getElementById("buy?").style.display = "block";
     }
 }
@@ -150,7 +161,7 @@ function no4(){
     else
     {
         document.getElementById("failure?").innerHTML =
-            "This is an impulse purchase. Don't buy it!";
+            "This is an impulsive purchase. Don't buy it!";
         document.getElementById("buy?").style.display = "block";
     }
 }
@@ -175,7 +186,7 @@ function didBuy(){
     bought++;
     console.log('test');
     document.getElementById("failure?").innerHTML =
-        "wow, you really succumbed to your impulses. what. a. failure.";
+        "Very well; sometimes you simply need to treat yourself!";
     close_appear();
     //document.getElementById("close").innerHTML = "close window";
 }
@@ -199,7 +210,7 @@ function didNotBuy(){
     not_bought++;
     console.log('didn\'t buy item');
     document.getElementById("failure?").innerHTML =
-        "congrats, you stood up to your impulses!";
+        "Congrats for controlling your impulses! Please exit this tab.";
     close_appear();
     //document.getElementById("close").innerHTML = "close window";
    // window.close();

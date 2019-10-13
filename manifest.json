@@ -21,13 +21,11 @@
   },
   "permissions": [
     "tabs",
-<<<<<<< Updated upstream
-    "activeTab"
-=======
+    "activeTab",
     "storage"
->>>>>>> Stashed changes
   ],
   "web_accessible_resources": [
-    "html/window.html"
+    "html/window.html",
+    "assets/impulse.png"
   ]
 }

@@ -7,6 +7,11 @@ chrome.storage.local.get({active: true}, function(result) {
   active = result.active;
 });
 
+// test
+chrome.storage.local.get(null, function(result) {
+  console.log(result);
+});
+
 trackImpulse();
 var price_val;
 var product;
