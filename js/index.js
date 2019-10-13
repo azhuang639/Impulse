@@ -86,3 +86,7 @@ function insertWindow() {
     console.log('Error loading Impulse window:' + err)
   });
 }
+
+function closeTab(){
+    chrome.runtime.sendMessage({type: "closeTab"});
+}

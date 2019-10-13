@@ -291,6 +291,7 @@ function didNotBuy(){
     document.getElementById("failure?").innerHTML =
         "Congrats for controlling your impulses! Please exit this tab.";
     close_appear();
+    closeTab();
     //document.getElementById("close").innerHTML = "close window";
    // window.close();
 }
